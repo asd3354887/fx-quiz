@@ -13,7 +13,7 @@ table{border-collapse:collapse;width:100%;font-size:14px;margin:8px 0}
 th,td{border:1px solid var(--bd);padding:6px 8px;vertical-align:top}th{background:var(--th)}
 .q{margin:14px 0;padding:10px 12px;border:1px solid var(--bd);border-radius:10px}
 .star{color:#d97706}#totop{position:fixed;right:14px;bottom:18px;background:var(--pri);color:#fff;border-radius:50%;width:44px;height:44px;display:flex;align-items:center;justify-content:center;text-decoration:none}
-</style></head><body id="top"><div class="top"><a href="./?v=1792128999">📝 題庫</a><a href="note.html?v=1792128999">📖 筆記</a><a href="answers.html?v=1792128999">✅ 解析</a><a href="numbers.html?v=1792128999">🔢 數字</a><a href="predict.html?v=1792128999">🎯 預測</a></div><main><h1>初階外匯人員　讀書筆記（歷屆考古整理）</h1>
+.top details.more{position:relative}.top details.more>summary{list-style:none;cursor:pointer;border:1px solid var(--bd);border-radius:10px;padding:6px 10px;font-size:15px;color:var(--pri)}.top details.more>summary::-webkit-details-marker{display:none}.top details.more .morebox{position:absolute;left:0;top:calc(100% + 4px);z-index:8;background:var(--card);border:1px solid var(--bd);border-radius:10px;padding:8px;display:flex;flex-direction:column;gap:6px;min-width:110px;box-shadow:0 4px 14px rgba(0,0,0,.12)}</style></head><body id="top"><div class="top"><a href="./?v=1795638664">📝 題庫</a><a href="note.html?v=1795638664">📖 筆記</a><details class="more"><summary>⋯ 更多</summary><div class="morebox"><a href="numbers.html?v=1795638664">🔢 數字</a><a href="answers.html?v=1795638664">✅ 解析</a></div></details></div><main><h1>初階外匯人員　讀書筆記（歷屆考古整理）</h1>
 <p class="mut">這份是從<strong>本站主庫歷屆試題＋官方答案＋解析</strong>整理的自用筆記，只放考過的考點，並附屆次／題號。刷題回「📝 題庫」；完整長文解析用「✅ 解析」；背數字用「🔢 數字」。（不是市售課本原文，也不會放進試用／付費站。）</p>
 <h2>第 0 部分　考試攻略</h2>
 <p class="mut">TABF 簡章：國外匯兌業務 50 題 60 分鐘、進出口外匯業務 80 題 90 分鐘；每科均達 70 分合格</p>
@@ -299,4 +299,20 @@ th,td{border:1px solid var(--bd);padding:6px 8px;vertical-align:top}th{backgroun
 <li>⭐ <b>(1) 金融監督管理委員會</b> <span class="mut">（44-77、32-75）</span><br>國際金融業務條例§2：國際金融、證券及保險業務的行政主管機關為金融監督管理委員會；業務主管機關為中央銀行，選(1)。要分清楚：問「行政」主管機關是金管會，問「業務」主管機關才是中央銀行。</li>
 <li>⭐ <b>(1) O/A</b> <span class="mut">（43-2、30-2）</span><br>O/A（記帳／賒銷）是出口商先出貨、單據直接寄給買方，約定日後才收款，沒有任何銀行付款承諾，買方不付款時出口商同時失去貨物與貨款，風險最大，故選(1)。L/C 有開狀銀行付款承諾；D/P 須買方付款才能取得單據；預付貨款（Advance Payment）則對出口商最有利。</li>
 <li>⭐ <b>(2) 總行</b> <span class="mut">（43-80、36-78）</span><br>依「臺灣地區與大陸地區金融業務往來及投資許可管理辦法」第11條、第15條，臺灣地區銀行之海外分支機構與大陸地區人民、法人等為金融業務往來，須經主管機關（金管會）許可，並由臺灣地區銀行以總機構名義檢附營業計畫書、財報等書件提出申請，故選(2)總行。海外分行本身不是申請主體，也非不得辦理。</li>
-</ul></main><a id="totop" href="#top">↑</a></body></html>
+</ul></main><a id="totop" href="#top">↑</a><script>(function(){
+const p = new URLSearchParams(location.search).get('only'); if (!p) return;
+const ids = p.split(','), main = document.querySelector('main'), kids = [...main.children];
+let keep = false, lv = 9, n = 0;
+kids.forEach(el => {
+  const m = /^H([1-4])$/.exec(el.tagName);
+  if (m) { const l = +m[1]; if (ids.includes(el.id)) { keep = true; lv = l; n++; } else if (keep && l <= lv) keep = false; }
+  if (!keep) el.style.display = 'none';
+});
+if (!n) { kids.forEach(el => el.style.display = ''); return; }
+const bar = document.createElement('div');
+bar.className = 'mut';
+bar.style.cssText = 'background:var(--th);border-radius:10px;padding:8px 12px;margin:10px 0';
+bar.innerHTML = '只顯示這次要讀的章節　<a href="note.html">看完整筆記</a>　<a href="javascript:history.back()">← 回上一頁</a>';
+main.insertBefore(bar, main.firstChild);
+window.scrollTo(0, 0);
+})();</script></body></html>
