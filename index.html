@@ -206,7 +206,7 @@ function hotList(s, ch) {
 }
 
 /* ---------- 每日作業（自選天數・第 1 天＝開始日） ---------- */
-const NOTE = {};
+const NOTE = {"第 0 部分　考試攻略": "exam-strategy", "考試攻略": "exam-strategy", "考試資訊與準備策略": "exam-strategy", "匯兌 1｜外匯管理法規與申報": "匯兌 1｜外匯管理法規與申報", "匯兌 2｜匯出匯款與匯入匯款": "匯兌 2｜匯出匯款與匯入匯款", "匯兌 3｜外幣現鈔、旅行支票與外幣存款": "匯兌 3｜外幣現鈔、旅行支票與外幣存款", "匯兌 4｜外匯市場、匯率與報價": "匯兌 4｜外匯市場、匯率與報價", "匯兌 5｜外匯衍生性商品與避險": "匯兌 5｜外匯衍生性商品與避險", "匯兌 6｜國際金融業務分行（OBU）與跨境業務": "匯兌 6｜國際金融業務分行（OBU）與跨境業務", "匯兌 7｜洗錢防制、制裁與SWIFT": "匯兌 7｜洗錢防制、制裁與SWIFT", "匯兌 8｜其他": "匯兌 8｜其他", "進出口 1｜信用狀基本概念與UCP600": "進出口 1｜信用狀基本概念與UCP600", "進出口 2｜進口信用狀與進口業務": "進出口 2｜進口信用狀與進口業務", "進出口 3｜出口信用狀、押匯與單據審核（ISBP）": "進出口 3｜出口信用狀、押匯與單據審核（ISBP）", "進出口 4｜運輸單據與貨物保險": "進出口 4｜運輸單據與貨物保險", "進出口 5｜託收（URC522）": "進出口 5｜託收（URC522）", "進出口 6｜國貿條規（Incoterms）": "進出口 6｜國貿條規（Incoterms）", "進出口 7｜保證與擔保信用狀（URDG、ISP98）": "進出口 7｜保證與擔保信用狀（URDG、ISP98）", "進出口 8｜應收帳款承購（Factoring）與Forfaiting": "進出口 8｜應收帳款承購（Factoring）與Forfaiting", "進出口 9｜貿易融資與外銷貸款": "進出口 9｜貿易融資與外銷貸款", "進出口 10｜其他": "進出口 10｜其他"};
 const RATE = 45;
 const PLAN_DAY_OPTS = [3, 5, 7, 10, 14, 21];
 const R = (s, c, min) => ({k: 'read', s, c, min}), H = (s, c) => ({k: 'hi', s, c}), O = (s, c) => ({k: 'one', s, c}), V = s => ({k: 'rev', s});
@@ -246,7 +246,7 @@ function buildPlan(n, startMs) {
   const wSub = SUBS.length > 1 ? 'all' : SUBS[0];
   splitCh(chapters, content).forEach((chs, i) => {
     const tasks = [];
-    if (!days.length) tasks.push(C('看筆記「考試資訊與準備策略」', 15, '第 1 部分'));
+    if (!days.length) tasks.push(C('看筆記「考試攻略」', 15, '考試攻略'));
     chs.forEach(({s, c}) => { tasks.push(R(s, c, 15), H(s, c)); });
     if (i === content - 1) tasks.push(W(wSub, 30));
     push(tasks);
